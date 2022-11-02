@@ -57,6 +57,7 @@ nav span {
 
 .headline-content p {
   color: #172b4d;
+  padding: 0 250px;
   font-size: 20px;
   margin: 58px 0 120px 0;
   font-weight: 300;
@@ -87,11 +88,13 @@ nav span {
 }
 
 .card-container {
-  padding: 0 35px;
-  gap: 20px;
+  padding: 0 200px;
+  gap: 10px;
   display: grid;
+  justify-content: center;
   grid-template-columns: auto auto auto;
 }
+
 
 .project-card {
   width: 327px;
@@ -173,17 +176,7 @@ nav span {
   margin: 20px 0;
 }
 
-/* on mobile */
 
-@media only screen and (max-width: 768px) {
-  .card-container {
-    grid-template-columns: auto;
-  }
-
-  .headline {
-    background-image: url("./img/mobile-hero-image.svg");
-  }
-}
 
 .card-holder-container {
   height: 352px;
@@ -246,7 +239,23 @@ nav span {
   margin-bottom: 40px;
   background-position: bottom;
   background-size: cover;
-  background-image: url("./img/about-me-bg.svg");
+  z-index: 3;
+  position: relative;
+  /* background-image: url("./img/about-me-bg.svg"); */
+
+}
+.about-myself img:last-of-type {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  left: 0;
+}
+
+.about-myself img:first-of-type {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  right: 0;
 }
 
 .about-myself button {
@@ -271,7 +280,7 @@ nav span {
   font-size: 20px;
   color: #42526e;
   font-style: normal;
-  line-height: 40px;
+  line-height: 32px;
   margin:24px 12px ;
   font-weight: 300;
 }
@@ -290,15 +299,44 @@ nav span {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-
 }
 
-.language {
+
+
+/* .language {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
   margin-bottom: 24px;
+} */
+
+.language {
+  padding: 0 200px;
+  gap: 10px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto auto auto;
+}
+
+
+/* on mobile */
+
+@media only screen and (max-width: 768px) {
+  .card-container {
+    padding: 0 20px;
+    grid-template-columns: auto;
+  }
+  .language {
+    padding: 0 20px;
+    grid-template-columns: auto;
+  }
+
+  .headline {
+    background-image: url("./img/mobile-hero-image.svg");
+  }
+  .headline-content p{
+    padding: 0 20px;
+  }
 }
